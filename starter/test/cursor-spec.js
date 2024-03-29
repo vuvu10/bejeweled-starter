@@ -6,9 +6,16 @@ const Screen = require("../class/screen.js");
 describe ('Cursor', function () {
 
   let cursor;
+  let grid;
 
   beforeEach(function() {
     cursor = new Cursor(3, 3);
+    grid = [
+      ['R', 'G', 'B'],
+      ['Y', 'B', 'R'],
+      ['G', 'R', 'Y'],
+
+    ];
   });
 
 
@@ -65,7 +72,19 @@ describe ('Cursor', function () {
     expect([cursor.row, cursor.col]).to.deep.equal([0, 0]);
   });
 
+  it('swaps gems on valid selection', function () {
+    cursor.row = 1;
+    cursor.col = 1;
+    const targetRow = 0;
+    const targetCol = 0;
+
+    cursor.swapGems(targetRow, targetCol);
+
+    expect(grid[cursor.row][cursor.col]).to.equal('B');
+    expect(grid[targetRow][targetCol]).to.equal('Y');
+
+  });
+
 
 
 });
-
