@@ -21,7 +21,7 @@ describe ('Bejeweled', function () {
       ['B', 'Y', 'R', 'G', 'B', 'Y', 'R', 'B'],
     ];
     const initialScore = game.score;
-    game.swapGames(0, 1, 0, 2);
+    game.swapGems(0, 1, 0, 2);
     expect(game.grid[0][0]).to.not.equal('G');
     expect(game.score).to.be.greaterThan(initialScore);
   });
@@ -35,7 +35,7 @@ describe ('Bejeweled', function () {
       ['B', 'Y', 'R', 'G', 'B', 'Y', 'R', 'B'],
     ];
     const initialScore = game.score;
-    game.swapGames(0, 1, 0, 2);
+    game.swapGems(0, 1, 0, 2);
     expect(game.grid[0][0]).to.not.equal('G');
     expect(game.grid[1][1]).to.not.equal('B');
     expect(game.score).to.be.greaterThan(initialScore * 2);
